@@ -1,0 +1,113 @@
+*
+  body
+    display: flex
+    justify-content: center
+
+    #walkman
+      margin-top: 4rem
+      position: absolute
+
+      #orangeButton
+        background-color: orange
+        height: 8px
+        width: 45px
+        margin-left: 3rem
+        border-radius: 5px 5px 0 0
+        position: relative
+        top: 2px
+
+      #line
+        margin: 0
+        position: relative
+        top: 65px
+        border-top: 1px solid #a2a2a2
+
+      #walkmanBody
+        height: 418px
+        width: 259px
+        background-color: #2B3449
+        display: flex
+        justify-content: flex-end
+        border-radius: 5px
+
+        #sony
+          font-family: 'Volkhov', serif
+          font-size: 2rem
+          letter-spacing: 3px
+          color: #c6c6c6
+          position: absolute
+          top: 3rem
+          left: 1.5rem
+
+        #walkman
+          font-size: 1.5rem
+          font-family: 'Montserrat Alternates', sans-serif
+          position: absolute
+          bottom: 1.2rem
+          left: 1rem
+          margin: 0
+          color: #c6c6c6
+
+        #arrow
+          position: absolute
+          bottom: 8.3rem
+          right: 5rem
+          font-size: 4rem
+          color: #c6c6c6
+
+        #window
+          height: 200px
+          width: 80px
+          background-color: #212121
+          position: absolute
+          top: 9.5rem
+          left: 2.5rem
+          border-radius: 5px
+          display: flex
+          justify-content: center
+          flex-direction: column
+
+          #spinny1, #spinny2
+            position: relative
+            height: 30px
+            width: 30px
+            border-radius: 50%
+            background-color: #86760f
+            margin: 0rem 0 0rem 2rem
+
+            &:after
+              content: ''
+              display: block
+              background-color: red
+
+          #spinny1
+            margin-bottom: 5.5rem
+
+        #greySide
+          width: 50px
+          height: 418px
+          background-color: #c9c9c9
+          border-radius: 0 5px 5px 0
+          display: flex
+          justify-content: flex-end
+          z-index: 2
+
+          #dot
+            height: 13px
+            width:  13px
+            border-radius: 50%
+            background-color: #e8e8e8
+            position: absolute
+            bottom: 8.3rem
+            right: 2rem
+            border: solid 1px #ababab
+
+
+          #stopEject
+            height: 80px
+            width: 5px
+            background-color: #9e9e9e
+            position: relative
+            margin-top: 3rem
+            left: 5px
+            border-radius: 0 2px 2px 0
