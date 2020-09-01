@@ -1,0 +1,139 @@
+$blue: #8fabc1;
+$orange: #dc9865;
+$gray: #bebebe;
+$white: #fff;
+$border: 1px solid red;
+$border2: 1px solid blue;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#walkman {
+  height: 26rem;
+  width: 18rem;
+  display: flex;
+  align-items: stretch;
+  border: $border;
+
+  &_left {
+    width: 15rem;
+    display: flex;
+    flex-direction: column;
+    border: $border2;
+
+    &_top {
+      height: 4rem;
+      position: relative;
+      border: $border;
+
+      &:before {
+        content: "";
+        position: absolute;
+        bottom: 100%;
+        right: 60%;
+        height: 0.5rem;
+        width: 2rem;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border: 1px solid $orange;
+      }
+    }
+
+    &_bottom {
+      height: 22rem;
+      display: flex;
+      flex-direction: column;
+      border: $border;
+
+      #sony {
+        height: 4rem;
+        border: $border2;
+      }
+
+      &_middle {
+        height: 14rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: $border2;
+
+        #window {
+          width: 4.5rem;
+          height: 12rem;
+          border-radius: 8px;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          border: $border;
+
+          #cassette {
+            height: 5rem;
+            width: 3.5rem;
+            position: relative;
+            border: $border2;
+
+            &:before,
+            &:after {
+              content: "";
+              position: absolute;
+              left: 50%;
+              transform: translateX(-50%);
+              display: block;
+              border-radius: 100%;
+              height: 2rem;
+              width: 2rem;
+              border: $border;
+            }
+
+            &:before {
+              bottom: calc(100% + 0.5rem);
+            }
+
+            &:after {
+              top: calc(100% + 0.5rem);
+            }
+          }
+        }
+
+        #arrow {
+          width: 2rem;
+          height: 4rem;
+          margin-left: 1.5rem;
+          border: $border;
+        }
+      }
+
+      #logo {
+        height: 4rem;
+        border: $border2;
+      }
+    }
+  }
+
+  &_right {
+    width: 3rem;
+    position: relative;
+    border: $border2;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 3rem;
+      left: 100%;
+      height: 6rem;
+      width: 0.25rem;
+      display: block;
+      border: $border;
+    }
+  }
+}
