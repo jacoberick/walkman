@@ -1,114 +1,194 @@
-* body {
+@keyframes rotation {
+  0% {
+    transform: translateX(-50%) rotate(359deg);
+  }
+  100% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
   display: flex;
+  align-items: center;
   justify-content: center;
 }
-* body #walkman {
-  margin-top: 4rem;
-  position: absolute;
-}
-* body #walkman #orangeButton {
-  background-color: orange;
-  height: 8px;
-  width: 45px;
-  margin-left: 3rem;
-  border-radius: 5px 5px 0 0;
-  position: relative;
-  top: 2px;
-}
-* body #walkman #line {
-  margin: 0;
-  position: relative;
-  top: 65px;
-  border-top: 1px solid #a2a2a2;
-}
-* body #walkman #walkmanBody {
-  height: 418px;
-  width: 259px;
-  background-color: #2B3449;
+
+#walkman {
+  height: 26rem;
+  width: 18rem;
   display: flex;
+  align-items: stretch;
+  border-radius: 5px;
+  background-color: #738fa2;
+  background: linear-gradient(left);
+}
+#walkman #left {
+  width: 15rem;
+  display: flex;
+  flex-direction: column;
+}
+#walkman #left #top {
+  height: 4rem;
+  position: relative;
+}
+#walkman #left #top:before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  right: 60%;
+  height: 0.5rem;
+  width: 2rem;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: #e6935e;
+}
+#walkman #left #bottom {
+  height: 22rem;
+  display: flex;
+  flex-direction: column;
+}
+#walkman #left #bottom #sony {
+  height: 4rem;
+  border-top: #acacac 1px solid;
+}
+#walkman #left #bottom #sony img {
+  height: 1.6rem;
+  margin-top: 0.7rem;
+  margin-left: 1rem;
+}
+#walkman #left #bottom #bottomMid {
+  height: 14rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#walkman #left #bottom #bottomMid #window {
+  width: 4.5rem;
+  height: 12rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
   justify-content: flex-end;
-  border-radius: 5px;
+  background-color: #232323;
 }
-* body #walkman #walkmanBody #sony {
-  font-family: "Volkhov", serif;
-  font-size: 2rem;
-  letter-spacing: 3px;
-  color: #c6c6c6;
-  position: absolute;
-  top: 3rem;
-  left: 1.5rem;
+#walkman #left #bottom #bottomMid #window #cassette {
+  height: 5rem;
+  width: 3.5rem;
+  position: relative;
+  background-color: #acacac;
+  border-radius: 3px;
 }
-* body #walkman #walkmanBody #walkman {
-  font-size: 1.5rem;
-  font-family: "Montserrat Alternates", sans-serif;
+#walkman #left #bottom #bottomMid #window #cassette #spinny1,
+#walkman #left #bottom #bottomMid #window #cassette #spinny2 {
+  content: "";
   position: absolute;
-  bottom: 1.2rem;
-  left: 1rem;
-  margin: 0;
-  color: #c6c6c6;
+  left: 50%;
+  display: block;
+  transform: translate(-50%);
+  border-radius: 100%;
+  height: 2rem;
+  width: 2rem;
+  background-color: #776249;
+  animation: rotation 10s infinite linear;
 }
-* body #walkman #walkmanBody #arrow {
-  position: absolute;
-  bottom: 8.3rem;
-  right: 5rem;
-  font-size: 4rem;
-  color: #c6c6c6;
+#walkman #left #bottom #bottomMid #window #cassette #spinny1 .lines,
+#walkman #left #bottom #bottomMid #window #cassette #spinny2 .lines {
+  width: 0.3rem;
+  height: 0.5rem;
+  background-color: #acacac;
+  transform: translate(0.85rem, 0.25rem);
+  border-radius: 1px 1px 0 0;
 }
-* body #walkman #walkmanBody #window {
-  height: 200px;
-  width: 80px;
-  background-color: #212121;
+#walkman #left #bottom #bottomMid #window #cassette #spinny1 .lines:before,
+#walkman #left #bottom #bottomMid #window #cassette #spinny2 .lines:before {
+  content: "";
+  display: block;
   position: absolute;
-  top: 9.5rem;
-  left: 2.5rem;
-  border-radius: 5px;
+  width: 0.3rem;
+  height: 0.5rem;
+  background-color: #acacac;
+  transform: translate(-0.4rem, 0.8rem) rotate(240deg);
+  border-radius: 1px 1px 0 0;
+}
+#walkman #left #bottom #bottomMid #window #cassette #spinny1 .lines:after,
+#walkman #left #bottom #bottomMid #window #cassette #spinny2 .lines:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0.3rem;
+  height: 0.5rem;
+  background-color: #acacac;
+  transform: translate(0.4rem, 0.8rem) rotate(120deg);
+  border-radius: 1px 1px 0 0;
+}
+#walkman #left #bottom #bottomMid #window #cassette #spinny1:after,
+#walkman #left #bottom #bottomMid #window #cassette #spinny2:after {
+  content: "";
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #232323;
+  border-radius: 100%;
+  position: absolute;
+  left: 12.5%;
+  bottom: 12.5%;
+  z-index: -1;
+}
+#walkman #left #bottom #bottomMid #window #cassette #spinny1 {
+  bottom: calc(100% + 0.5rem);
+}
+#walkman #left #bottom #bottomMid #window #cassette #spinny2 {
+  top: calc(100% + 0.5rem);
+}
+#walkman #left #bottom #bottomMid #arrow {
+  width: 2rem;
+  height: 4rem;
+  margin-left: 1.5rem;
+}
+#walkman #left #bottom #bottomMid #arrow img {
+  height: 4.5rem;
+}
+#walkman #left #bottom #logo {
+  height: 4rem;
+}
+#walkman #left #bottom #logo img {
+  height: 2.5rem;
+  margin-left: 2.5rem;
+}
+#walkman #right {
+  width: 3rem;
+  position: relative;
+  border-radius: 0 2px 2px 0;
+  background-color: #bdbdbd;
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
-* body #walkman #walkmanBody #window #spinny1, * body #walkman #walkmanBody #window #spinny2 {
-  position: relative;
-  height: 30px;
-  width: 30px;
-  border-radius: 50%;
-  background-color: #86760f;
-  margin: 0rem 0 0rem 2rem;
+#walkman #right #circle {
+  height: 0.8rem;
+  width: 0.8rem;
+  border-radius: 100%;
+  border: 1px #acacac solid;
+  background-color: #e9e9e9;
+  margin-left: 0.5rem;
+  margin-top: 7rem;
 }
-* body #walkman #walkmanBody #window #spinny1:after, * body #walkman #walkmanBody #window #spinny2:after {
+#walkman #right:before {
   content: "";
-  display: block;
-  background-color: red;
-}
-* body #walkman #walkmanBody #window #spinny1 {
-  margin-bottom: 5.5rem;
-}
-* body #walkman #walkmanBody #greySide {
-  width: 50px;
-  height: 418px;
-  background-color: #c9c9c9;
-  border-radius: 0 5px 5px 0;
-  display: flex;
-  justify-content: flex-end;
-  z-index: 2;
-}
-* body #walkman #walkmanBody #greySide #dot {
-  height: 13px;
-  width: 13px;
-  border-radius: 50%;
-  background-color: #e8e8e8;
   position: absolute;
-  bottom: 8.3rem;
-  right: 2rem;
-  border: solid 1px #ababab;
-}
-* body #walkman #walkmanBody #greySide #stopEject {
-  height: 80px;
-  width: 5px;
-  background-color: #9e9e9e;
-  position: relative;
-  margin-top: 3rem;
-  left: 5px;
+  top: 3rem;
+  left: 100%;
+  height: 6rem;
+  width: 0.25rem;
+  display: block;
   border-radius: 0 2px 2px 0;
+  background-color: #acacac;
 }
 
 /*# sourceMappingURL=styles.css.map */
