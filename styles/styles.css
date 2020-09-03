@@ -170,7 +170,8 @@ body {
   justify-content: center;
   flex-direction: column;
 }
-#walkman #right #circle {
+#walkman #right:after {
+  content: "";
   height: 0.8rem;
   width: 0.8rem;
   border-radius: 100%;
