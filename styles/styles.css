@@ -95,7 +95,7 @@ body {
   height: 2rem;
   width: 2rem;
   background-color: #776249;
-  animation: rotation 10s infinite linear;
+  animation: rotation 2s infinite linear;
 }
 #walkman #left #bottom #bottomMid #window #cassette #spinny1 .lines,
 #walkman #left #bottom #bottomMid #window #cassette #spinny2 .lines {
